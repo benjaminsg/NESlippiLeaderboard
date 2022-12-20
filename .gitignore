@@ -13,3 +13,4 @@ dist
 secrets/*
 cron/data/*
 cron/logs/*
+package-lock.json
