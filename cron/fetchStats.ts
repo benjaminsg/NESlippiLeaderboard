@@ -11,7 +11,7 @@ const fs = syncFs.promises;
 const execPromise = util.promisify(exec);
 
 var playerCodes = [
-    "HUFFF#0", "IBDW#0", "AMSA#0"
+    "HUFFF#0", "IBDW#0", "AMSA#0", "A#9"
 ];
 
 const getPlayerConnectCodes = async (): Promise<string[]> => {
