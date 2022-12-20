@@ -1,5 +1,4 @@
 import { RateLimiter } from "limiter"
-var fetch = require('node-fetch');
 
 export const getPlayerData = async (connectCode: string) => {
   const query = `fragment userProfilePage on User {
