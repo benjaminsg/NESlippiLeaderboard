@@ -3,7 +3,7 @@ import { getPlayerDataThrottled } from './slippi'
 // import creds from '../secrets/creds.json';
 import * as syncFs from 'fs';
 import * as path from 'path';
-import * as util from 'util';
+import util from 'util';
 import * as settings from '../settings'
 
 import { exec } from 'child_process';
