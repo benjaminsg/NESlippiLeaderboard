@@ -22,9 +22,6 @@ module.exports = {
   devServer: {
     port,
     compress: true,
-    contentBase: output,
-    publicPath,
-    stats: { colors: true },
     hot: true,
     historyApiFallback: true,
     open: true,
