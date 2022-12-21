@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 DIR_PATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 NODE_BIN=/home/ubuntu/.nvm/versions/node/v18.12.0/bin/node
 cd "$DIR_PATH/.." 
