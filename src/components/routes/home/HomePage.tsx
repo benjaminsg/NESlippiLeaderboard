@@ -54,7 +54,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center h-screen p-8 font-proximaNova">
       <h1 className="text-3xl m-4 text-center text-white font-proximaNova">
-        {settings.title}
+        <b>{settings.title}</b>
       </h1>
       <div className="p-1 text-gray-300"> Updated {updateDesc}</div>
       <Table players={players} />
