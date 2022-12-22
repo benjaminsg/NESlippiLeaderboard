@@ -52,13 +52,13 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-screen p-8">
-      <h1 className="text-3xl m-4 text-center text-white">
+    <div className="flex flex-col items-center h-screen p-8 font-proximaNova">
+      <h1 className="text-3xl m-4 text-center text-white font-proximaNova">
         {settings.title}
       </h1>
       <div className="p-1 text-gray-300"> Updated {updateDesc}</div>
       <Table players={players} />
-      <div className="p-4 text-gray-300 flex flex-col">
+      <div className="p-4 text-gray-300 flex flex-col font-proximaNova">
         <div>Built by Hufff (Benji) using blorppppp's CO Leaderboard</div>
       </div>
     </div>

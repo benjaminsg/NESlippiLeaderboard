@@ -15,7 +15,7 @@ export function Table({ players }: Props) {
   return (
     <>
     <table className="table-fixed text-center">
-      <thead className="bg-gray-800">
+      <thead className="bg-blue-900">
         <tr>
           {th('Rank')}
           {th('Player')}

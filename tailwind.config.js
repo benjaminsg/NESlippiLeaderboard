@@ -2,10 +2,14 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        proximaNova: 'Proxima Nova, sans-serif',
+      },
+    },
   },
   safelist: [
-    'bg-gray-600'
+    'bg-gray-800'
   ],
   plugins: [],
 };
