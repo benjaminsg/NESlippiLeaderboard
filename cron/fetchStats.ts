@@ -30,7 +30,7 @@ const getPlayers = async () => {
   const codes = sheetData[0]
   const tags = sheetData[1]
   console.log(`Found ${codes.length} player codes`)
-  const allData = codes.map(code => getPlayerDataThrottled(code))
+  const allData = codes.map((code, i) => getPlayerDataThrottled(code, tags[i]))
   const results = await Promise.all(allData.map(p => p.catch(e => e)));
   const validResults = results.filter(result => !(result instanceof Error));
   const unsortedPlayers = validResults
