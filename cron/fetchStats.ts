@@ -40,9 +40,10 @@ const getPlayers = async () => {
     return player.displayName;
   });
   console.log(displayNames)
-  const unsortedPlayersWithTags = unsortedPlayers.forEach(function (player, i) {
-    player.gTag = tags[i]
-  });
+  const unsortedPlayersWithTags = unsortedPlayers.forEach((player, i) => ({
+    ...player,
+    tag: tags[i]
+  }));
   console.log(unsortedPlayersWithTags)
   return unsortedPlayers.sort((p1, p2) =>
     p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
