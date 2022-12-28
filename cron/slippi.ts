@@ -26,7 +26,6 @@ export const getPlayerData = async (connectCode: string) => {
           }
       __typename
   }
-
   query AccountManagementPageQuery($cc: String!) {
       getConnectCode(code: $cc) {
             user {

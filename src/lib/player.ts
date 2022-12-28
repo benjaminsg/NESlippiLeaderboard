@@ -16,6 +16,7 @@ interface RankedNetplayProfile {
 
 export interface Player {
   displayName: string;
+  leaderboardName: string;
   connectCode: {
     code: string;
   };
