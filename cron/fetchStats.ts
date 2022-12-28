@@ -36,6 +36,10 @@ const getPlayers = async () => {
   const unsortedPlayers = validResults
     .filter((data: any) => data?.data?.getConnectCode?.user)
     .map((data: any) => data.data.getConnectCode.user);
+  var displayNames = unsortedPlayers.map(function(player) {
+    return player.displayName;
+  });
+  console.log(displayNames)
   const unsortedPlayersWithTags = unsortedPlayers.forEach(function (player, i) {
     player.gTag = tags[i]
   });
