@@ -36,14 +36,11 @@ const getPlayers = async () => {
   const unsortedPlayers = validResults
     .filter((data: any) => data?.data?.getConnectCode?.user)
     .map((data: any) => data.data.getConnectCode.user);
-  var displayNames = unsortedPlayers.map(function(player) {
-    return player.displayName;
-  });
-  console.log(displayNames)
-  const unsortedPlayersWithTags = unsortedPlayers.forEach((player, i) => ({
-    ...player,
-    tag: tags[i]
-  }));
+  // var displayNames = unsortedPlayers.map(function(player) {
+  //   return player.displayName;
+  // });
+  console.log("unsortedPlayersWithTags")
+  const unsortedPlayersWithTags = unsortedPlayers.map((obj, i) => ({ ...obj, tag: tags[i]}))
   console.log(unsortedPlayersWithTags)
   return unsortedPlayers.sort((p1, p2) =>
     p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
