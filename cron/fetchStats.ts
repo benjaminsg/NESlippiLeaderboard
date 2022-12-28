@@ -20,6 +20,7 @@ const getPlayerConnectCodes = async (): Promise<string[]> => {
   await doc.loadInfo(); // loads document properties and worksheets
   const sheet = doc.sheetsByIndex[0];
   const rows = (await sheet.getRows()).slice(0); // remove header row, changed to 0 from 1
+  console.log(rows)
   return [...new Set(rows.map((r) => r._rawData[1]).filter(r => r !== ''))] as string[]
 };
 
