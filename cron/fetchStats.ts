@@ -19,7 +19,7 @@ const getPlayerConnectCodes = async (): Promise<string[]> => {
   await doc.useServiceAccountAuth(creds);
   await doc.loadInfo(); // loads document properties and worksheets
   const sheet = doc.sheetsByIndex[0];
-  const rows = (await sheet.getRows()).slice(0); // remove header row, changed to 0 from 1
+  const rows = (await sheet.getRows()); // remove header row, changed to 0 from 1
   console.log("rows")
   console.log(rows)
   console.log("tags?")
