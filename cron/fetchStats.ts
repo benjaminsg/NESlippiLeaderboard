@@ -14,23 +14,24 @@ const execPromise = util.promisify(exec);
 //     "HUFFF#0", "IBDW#0", "AMSA#0"
 // ];
 
-const getPlayerConnectCodes = async (): Promise<string[]> => {
+const getSheetData = async (): Promise<string[][]> => {
   const doc = new GoogleSpreadsheet(settings.spreadsheetID);
   await doc.useServiceAccountAuth(creds);
   await doc.loadInfo(); // loads document properties and worksheets
   const sheet = doc.sheetsByIndex[0];
   const rows = (await sheet.getRows()); // remove header row, changed to 0 from 1
-  console.log("rows")
-  console.log(rows)
-  console.log("tags?")
-  console.log([...new Set(rows.map((r) => r._rawData[2]).filter(r => r !== ''))] as string[])
-  return [...new Set(rows.map((r) => r._rawData[1]).filter(r => r !== ''))] as string[]
+  const codes = [...new Set(rows.map((r) => r._rawData[1]).filter(r => r !== ''))] as string[]
+  const tags = [...new Set(rows.map((r) => r._rawData[2]).filter(r => r !== ''))] as string[]
+  return [codes, tags]
 };
 
 const getPlayers = async () => {
-  const codes = await getPlayerConnectCodes()
+  const sheetData = await getSheetData()
+  const codes = sheetData[0]
+  const tags = sheetData[1]
   console.log(`Found ${codes.length} player codes`)
   const allData = codes.map(code => getPlayerDataThrottled(code))
+  console.log(allData)
   const results = await Promise.all(allData.map(p => p.catch(e => e)));
   const validResults = results.filter(result => !(result instanceof Error));
   const unsortedPlayers = validResults
