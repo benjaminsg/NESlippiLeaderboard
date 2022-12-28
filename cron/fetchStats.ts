@@ -36,7 +36,10 @@ const getPlayers = async () => {
   const unsortedPlayers = validResults
     .filter((data: any) => data?.data?.getConnectCode?.user)
     .map((data: any) => data.data.getConnectCode.user);
-  console.log(unsortedPlayers)
+  const unsortedPlayersWithTags = unsortedPlayers.forEach(function (player, i) {
+    player.gTag = tags[i]
+  });
+  console.log(unsortedPlayersWithTags)
   return unsortedPlayers.sort((p1, p2) =>
     p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
 }
