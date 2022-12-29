@@ -30,18 +30,18 @@ const getPlayers = async () => {
   const codes = sheetData[0]
   const tags = sheetData[1]
   console.log(`Found ${codes.length} player codes`)
-  const allData = codes.map((code, i) => getPlayerDataThrottled(code, tags[i]))
+  const allData = codes.map(code => getPlayerDataThrottled(code))
   const results = await Promise.all(allData.map(p => p.catch(e => e)));
   const validResults = results.filter(result => !(result instanceof Error));
   const unsortedPlayers = validResults
     .filter((data: any) => data?.data?.getConnectCode?.user)
     .map((data: any) => data.data.getConnectCode.user);
+  // uncomment to print all display names
   // var displayNames = unsortedPlayers.map(function(player) {
   //   return player.displayName;
   // });
-  // const unsortedPlayersWithTags = unsortedPlayers.map((obj, i) => ({ ...obj, leaderboardName: tags[i]}))
-  console.log(unsortedPlayers);
-  return unsortedPlayers.sort((p1, p2) =>
+  const unsortedPlayersWithTags = unsortedPlayers.map((obj, i) => ({ ...obj, leaderboardName: tags[i]}))
+  return unsortedPlayersWithTags.sort((p1, p2) =>
     p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
 }
 

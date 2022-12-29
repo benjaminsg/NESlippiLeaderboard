@@ -26,6 +26,7 @@ export const getPlayerData = async (connectCode: string) => {
           }
       __typename
   }
+
   query AccountManagementPageQuery($cc: String!) {
       getConnectCode(code: $cc) {
             user {
@@ -52,9 +53,7 @@ export const getPlayerData = async (connectCode: string) => {
 
 const limiter = new RateLimiter({tokensPerInterval: 1, interval: 'second'})
 
-export const getPlayerDataThrottled = async (connectCode: string, tag: string) => {
+export const getPlayerDataThrottled = async (connectCode: string) => {
   const remainingRequests = await limiter.removeTokens(1);
-  const playerData = getPlayerData(connectCode)
-  playerData['leaderboardName'] = tag;
-  return playerData;
+  return getPlayerData(connectCode)
 }
