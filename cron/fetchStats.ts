@@ -39,8 +39,9 @@ const getPlayers = async () => {
   // var displayNames = unsortedPlayers.map(function(player) {
   //   return player.displayName;
   // });
-  const unsortedPlayersWithTags = unsortedPlayers.map((obj, i) => ({ ...obj, leaderboardName: tags[i]}))
-  return unsortedPlayersWithTags.sort((p1, p2) =>
+  // const unsortedPlayersWithTags = unsortedPlayers.map((obj, i) => ({ ...obj, leaderboardName: tags[i]}))
+  console.log(unsortedPlayers);
+  return unsortedPlayers.sort((p1, p2) =>
     p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
 }
 

@@ -55,9 +55,6 @@ const limiter = new RateLimiter({tokensPerInterval: 1, interval: 'second'})
 export const getPlayerDataThrottled = async (connectCode: string, tag: string) => {
   const remainingRequests = await limiter.removeTokens(1);
   const playerData = getPlayerData(connectCode)
-  console.log("playerData")
-  console.log(playerData)
-  console.log("tag")
-  console.log(tag)
+  playerData['leaderboardName'] = tag;
   return playerData;
 }
