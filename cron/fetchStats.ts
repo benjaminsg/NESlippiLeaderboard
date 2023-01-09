@@ -37,9 +37,13 @@ const getPlayers = async () => {
     .filter((data: any) => data?.data?.getConnectCode?.user)
     .map((data: any) => data.data.getConnectCode.user);
   // uncomment to print all display names
-  // var displayNames = unsortedPlayers.map(function(player) {
-  //   return player.displayName;
-  // });
+  var displayNames = unsortedPlayers.map(function(player) {
+    return player.displayName;
+  });
+  console.log("displayNames")
+  console.log(displayNames)
+  console.log("tags")
+  console.log(tags)
   const unsortedPlayersWithTags = unsortedPlayers.map((obj, i) => ({ ...obj, leaderboardName: tags[i]}))
   return unsortedPlayersWithTags.sort((p1, p2) =>
     p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
