@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.flag {
+    display: inline-block;
+    vertical-align: middle;
+    height: 0.7em;
+    border-radius: 3px;
+    margin: 0 0.3em;
+    margin-bottom: 0.13em;
+}
+
+ .navigation {
+     background-color: #313c4e;
+     position: absolute;
+     top: 16px;
+     left: 16px;
+     border-radius: 15px;
+     overflow: hidden;
+     color: #ffffff;
+ }
+
+.navigation .flag {
+    height: 1em;
+}
+.navigation > p {
+    font-weight: 500;
+}
+.navigation > ul {
+    list-style: none;
+    display: none;
+}
+.navigation:hover > ul {
+    display: unset;
+}
+.navigation > ul, .navigation > p {
+    margin: 0;
+    padding: 0;
+}
+.navigation li {
+    border-top: 1px solid #2d3748;
+}
+.navigation li:hover {
+    background-color: #2d3748;
+    color: #ffffff;
+}
+.navigation li, .navigation > p {
+    padding: 12px 24px;
+}
