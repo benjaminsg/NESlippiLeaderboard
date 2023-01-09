@@ -17,22 +17,22 @@ const setCount = (player: Player) => {
 }
 
 const otherLeaderboards = [
-    { code: "us_az", name: "Arizona", url: "https://joemama0s.github.io/AZSlippiLeaderboard/#/" },
-    { code: "us_ar", name: "Arkansas", url: "https://smaneil.github.io/ArSlippiLeaderboard/#/" },
-    { code: "ca_bc", name: "British Columbia", url: "https://slippi.saika.ca/" },
-    { code: "us_co", name: "Colorado", url: "https://grantismo.github.io/CoSlippiLeaderboard/#/" },
-    { code: "us_in", name: "Indiana", url: "https://freemanb2.github.io/InSlippiLeaderboard/#/" },
-    { code: "us_ia", name: "Iowa", url: "https://teolandon.github.io/IaSlippiLeaderboard/#/" },
-    { code: "us_mo", name: "Missouri", url: "https://timtempor.github.io/MOSlippiLeaderboard/#/" },
-    { code: "us_norcal", name: "Norcal", url: "https://costasford.github.io/NorcalSlippiLeaderboard/#/" },
-    { code: "us_nm", name: "New Mexico", url: "https://izzythecubemaster.github.io/NMSlippiLeaderboard/#/" },
-    { code: "ca_qc", name: "Quebec", url: "https://tokage2000.github.io/QCSlippiLeaderboard/#/" },
-    { code: "uk_ab", name: "Scotland", url: "https://melee-leaderboards.github.io/Scotland/" },
-    { code: "us_sd", name: "Siouxland", url: "https://melangestillraces.github.io/SiouxlandSlippiLeaderboard/#/" },
-    { code: "south_america", name: "South America", url: "https://caioicy.github.io/slippi-leaderboard-sa/#/" },
-    { code: "us_tx", name: "Texas", url: "https://timothysdavis00.github.io/TXSlippiLeaderboard/#/" },
-    { code: "us_wa", name: "Washington", url: "https://slippi.poyo.dev/" },
-    { code: "uk", name: "United Kingdom", url: "https://spirrit.github.io/UKSlippiLeaderboard/#/" },
+    { code: "Us_az", name: "Arizona", url: "https://joemama0s.github.io/AZSlippiLeaderboard/#/" },
+    { code: "Us_ar", name: "Arkansas", url: "https://smaneil.github.io/ArSlippiLeaderboard/#/" },
+    { code: "Ca_bc", name: "British Columbia", url: "https://slippi.saika.ca/" },
+    { code: "Us_co", name: "Colorado", url: "https://grantismo.github.io/CoSlippiLeaderboard/#/" },
+    { code: "Us_in", name: "Indiana", url: "https://freemanb2.github.io/InSlippiLeaderboard/#/" },
+    { code: "Us_ia", name: "Iowa", url: "https://teolandon.github.io/IaSlippiLeaderboard/#/" },
+    { code: "Us_mo", name: "Missouri", url: "https://timtempor.github.io/MOSlippiLeaderboard/#/" },
+    { code: "Us_norcal", name: "Norcal", url: "https://costasford.github.io/NorcalSlippiLeaderboard/#/" },
+    { code: "Us_nm", name: "New Mexico", url: "https://izzythecubemaster.github.io/NMSlippiLeaderboard/#/" },
+    { code: "Ca_qc", name: "Quebec", url: "https://tokage2000.github.io/QCSlippiLeaderboard/#/" },
+    { code: "Uk_ab", name: "Scotland", url: "https://melee-leaderboards.github.io/Scotland/" },
+    { code: "Us_sd", name: "Siouxland", url: "https://melangestillraces.github.io/SiouxlandSlippiLeaderboard/#/" },
+    { code: "South_america", name: "South America", url: "https://caioicy.github.io/slippi-leaderboard-sa/#/" },
+    { code: "Us_tx", name: "Texas", url: "https://timothysdavis00.github.io/TXSlippiLeaderboard/#/" },
+    { code: "Us_wa", name: "Washington", url: "https://slippi.poyo.dev/" },
+    { code: "Uk", name: "United Kingdom", url: "https://spirrit.github.io/UKSlippiLeaderboard/#/" },
 ];
 
 const sortAndPopulatePlayers = (players: Player[]) => {
