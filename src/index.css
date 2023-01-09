@@ -14,24 +14,25 @@
  .navigation {
      background-color: #313c4e;
      position: absolute;
-     top: 16px;
+     top: 2px;
      left: 16px;
      border-radius: 15px;
-     overflow: hidden;
+     max-height: calc(100vh - 32px);
+     overflow: auto;
      color: #ffffff;
  }
 
 .navigation .flag {
     height: 1em;
 }
-.navigation > p {
+.navigation p {
     font-weight: 500;
 }
-.navigation > ul {
+.navigation ul {
     list-style: none;
     display: none;
 }
-.navigation:hover > ul {
+.navigation:hover ul {
     display: unset;
 }
 .navigation > ul, .navigation > p {
@@ -45,6 +46,26 @@
     background-color: #2d3748;
     color: #ffffff;
 }
-.navigation li, .navigation > p {
+.navigation li, .navigation p {
     padding: 12px 24px;
+}
+
+::-webkit-scrollbar {
+    width: 22px;
+    height: 22px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 5px solid transparent;
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: #2d3748;
+}
+
+.no-select {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
