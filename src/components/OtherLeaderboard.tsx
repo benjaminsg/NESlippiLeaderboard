@@ -7,7 +7,7 @@ interface Props {
 
 export function OtherLeaderboard({ leaderboard }: Props) {
 
-    const leaderboardFlag = "images/flags/" + leaderboard.code + ".svg";
+    const leaderboardFlag = "/images/flags/" + leaderboard.code + ".svg";
 
     return (
         <a href={leaderboard.url} target="_blank">
