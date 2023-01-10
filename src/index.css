@@ -1,6 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Maven+Pro:400,500,700,800|Rubik:300,400,500,700");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* poyo's font */
+@font-face {
+    font-family: "Poyodash";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/images/fonts/Poyodash-Bold.woff2") format("woff2");
+    unicode-range:
+            U+2E3A, /* two-em dash, for win/loss */
+            U+2E3B; /* three-em dash, for rating */
+}
+
+.font-poyodash {
+    font-family: "Poyodash", sans-serif;
+}
 
 .flag {
     display: inline-block;

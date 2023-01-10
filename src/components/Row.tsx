@@ -80,9 +80,9 @@ export function Row({ player }: Props) {
         <Characters player={player} totalGames={totalGames} />
       </td>
       <td className="md:text-xl text-gray-300 text-sm md:px-6 md:py-4 md:p-1 whitespace-nowrap">
-        {Boolean(totalGames) && <><span className="text-green-500">{player.rankedNetplayProfile.wins ?? 0}</span><span className="md:p-1">/</span>
+        <b>{Boolean(totalGames) && <><span className="text-green-500">{player.rankedNetplayProfile.wins ?? 0}</span><span className="md:p-1">/</span>
         <span className="text-red-500">{player.rankedNetplayProfile.losses ?? 0}</span>
-      </>}
+        </>}</b>
       </td>
     </tr>
   );
