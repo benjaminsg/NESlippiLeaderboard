@@ -57,7 +57,7 @@ export function Row({ player }: Props) {
   return (
     <tr className={`${playerRank.bgClass} border-separate border-spacing-2 border-b-2 border-gray-600`} >
       <td className="md:text-2xl text-gray-300 md:px-6 md:py-4 md:p-1 whitespace-nowrap">
-        <div>{isActive && `#${player.rankedNetplayProfile.rank}`}</div>
+        <div><b>{isActive && `${player.rankedNetplayProfile.rank}`}</b></div>
         {Boolean(rankChange) && changeArrow(rankChange)} </td>
       <td className="text-gray-100 md:px-6 md:py-4 p-1 whitespace-nowrap text-center overflow-hidden md:max-w-full max-w-[7rem] text-elipses">
         <b><a className="md:text-xl text-sm max-w-xs text-gray-300 hover:text-gray-500 hover:underline" href={codeToUrlSlug(player.connectCode.code)}>{player.leaderboardName}</a></b>

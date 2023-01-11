@@ -24,8 +24,15 @@
     vertical-align: middle;
     height: 0.7em;
     border-radius: 3px;
-    margin: 0 0.3em;
-    margin-bottom: 0.13em;
+    margin: 0 0.3em 0.13em;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.3em 0 -5%;
+    max-width: 10%;
+    height: auto;
 }
 
  .navigation {

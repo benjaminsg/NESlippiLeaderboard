@@ -9,6 +9,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime' // import plugin
 import * as settings from '../../../../settings'
 import '../../../index.css';
+import NEMLogo from '../../../../images/NEM.svg';
 
 dayjs.extend(relativeTime)
 
@@ -75,8 +76,8 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col items-center h-screen p-8">
-        <h1 className="text-3xl m-4 text-center text-white">
-            <b>{settings.title}</b>
+        <h1 className="text-4xl m-4 text-center text-white -mb-8">
+            <img src={NEMLogo} className="logo"/><b>{settings.title}</b>
         </h1>
       <div className="p-1 text-gray-300"> Updated {updateDesc}</div>
       <Table players={players} />
