@@ -8,6 +8,8 @@ import timestamp from '../../../../cron/data/timestamp.json';
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime' // import plugin
 import * as settings from '../../../../settings'
+import '../../../index.css';
+
 dayjs.extend(relativeTime)
 
 
@@ -72,8 +74,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-screen p-8 font-proximaNova">
-        <h1 className="text-3xl m-4 text-center text-white font-proximaNova">
+    <div className="flex flex-col items-center h-screen p-8">
+        <h1 className="text-3xl m-4 text-center text-white">
             <b>{settings.title}</b>
         </h1>
       <div className="p-1 text-gray-300"> Updated {updateDesc}</div>
@@ -84,7 +86,7 @@ export default function HomePage() {
                 <OtherLeaderboards leaderboards={otherLeaderboards} />
             </ul>
         </div>
-      <div className="p-4 text-gray-300 flex flex-col font-proximaNova">
+      <div className="p-4 text-gray-300 flex flex-col">
         <div>Built by Hufff (Benji) using blorppppp's CO Leaderboard</div>
       </div>
     </div>
