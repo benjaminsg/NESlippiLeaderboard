@@ -40,6 +40,7 @@
      position: absolute;
      top: 2px;
      left: 16px;
+     margin-bottom: 15px;
      border-radius: 15px;
      max-height: calc(100vh - 32px);
      overflow: auto;
@@ -84,6 +85,14 @@
     background-clip: padding-box;
     border-radius: 9999px;
     background-color: #2d3748;
+}
+
+.no-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-bar::-webkit-scrollbar-thumb {
+    display: none;
 }
 
 .no-select {

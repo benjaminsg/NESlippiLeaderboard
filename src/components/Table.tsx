@@ -21,7 +21,7 @@ export function Table({ players }: Props) {
           {th('Player')}
           {th('Rating')}
           {th(isSm ? 'Characters': 'Char')}
-          {th('W / L')}
+          {th(isSm? 'W / L' : 'W/L')}
         </tr>
       </thead>
       {players.length > 0 &&

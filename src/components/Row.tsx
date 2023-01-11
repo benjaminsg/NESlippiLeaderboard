@@ -61,7 +61,7 @@ export function Row({ player }: Props) {
         {Boolean(rankChange) && changeArrow(rankChange)} </td>
       <td className="text-gray-100 md:px-6 md:py-4 p-1 whitespace-nowrap text-center overflow-hidden md:max-w-full max-w-[7rem] text-elipses">
         <b><a className="md:text-xl text-sm max-w-xs text-gray-300 hover:text-gray-500 hover:underline" href={codeToUrlSlug(player.connectCode.code)}>{player.leaderboardName}</a></b>
-        <div className="text-gray-300 text-xs">{player.displayName} / {player.connectCode.code}</div>
+        <div className="text-gray-300 text-xs overflow-auto no-bar">{player.displayName} / {player.connectCode.code}</div>
       </td>
       <td className="md:text-xl text-sm text-gray-900 md:px-6 md:py-4 p-1 whitespace-nowrap text-center">
 
@@ -79,7 +79,7 @@ export function Row({ player }: Props) {
       <td className="md:text-sm text-xs text-gray-300 md:px-6 md:py-4 py-1  md:max-w-[18rem] max-w-[3rem]">
         <Characters player={player} totalGames={totalGames} />
       </td>
-      <td className="md:text-xl text-gray-300 text-sm md:px-6 md:py-4 md:p-1 whitespace-nowrap">
+      <td className="md:text-xl text-gray-300 text-sm md:px-6 md:py-4 md:p-1 whitespace-nowrap overflow-auto no-bar">
         <b>{Boolean(totalGames) && <><span className="text-green-500">{player.rankedNetplayProfile.wins ?? 0}</span><span className="md:p-1">/</span>
         <span className="text-red-500">{player.rankedNetplayProfile.losses ?? 0}</span>
         </>}</b>
