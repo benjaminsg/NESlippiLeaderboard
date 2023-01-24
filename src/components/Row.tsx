@@ -2,6 +2,8 @@ import React from 'react';
 import { Player } from '../lib/player'
 import { getRank } from '../lib/ranks'
 import { Characters } from './Characters'
+import 'react-tooltip/dist/react-tooltip.css'
+import {Tooltip} from "react-tooltip";
 
 interface Props {
   player: Player
@@ -53,6 +55,7 @@ export function Row({ player }: Props) {
   const totalGames = player.rankedNetplayProfile.characters.reduce((acc, val)=> acc + val.gameCount, 0);
   const rankChange = getRankChange(player);
   const ratingChange = getRatingChange(player);
+  const rankId = playerRank.name + codeToId(player.connectCode.code)
 
   return (
     <tr className={`${playerRank.bgClass} border-separate border-spacing-2 border-b-2 border-gray-600`} >
@@ -65,9 +68,10 @@ export function Row({ player }: Props) {
       </td>
       <td className="md:text-xl text-sm text-gray-900 md:px-6 md:py-4 p-1 whitespace-nowrap text-center">
 
-        {playerRank.iconUrl && <div className="flex items-center justify-center">
-          <img className="md:h-12 md:w-12 h-6 w-6 drop-shadow" src={playerRank.iconUrl} alt={playerRank.name} title={playerRank.name}/>
+        {playerRank.iconUrl && <div className="flex items-center justify-center" id={rankId} data-tooltip-content={playerRank.name}>
+          <img className="md:h-12 md:w-12 h-6 w-6 drop-shadow" src={playerRank.iconUrl}/>
         </div>}
+          <Tooltip className="text-sm" anchorId={rankId} />
         <div className="text-gray-300 md:text-sm text-xs font-poyodash">
           {isActive && Math.floor(player.rankedNetplayProfile.ratingOrdinal)}
           {isActive && Boolean(ratingChange) && changePlusMinus(ratingChange)}
