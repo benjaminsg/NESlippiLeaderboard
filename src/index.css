@@ -110,6 +110,7 @@ th {
 
 .no-border {
     border: none;
+    collapse: collapse;
 }
 
 .bottom-border {
