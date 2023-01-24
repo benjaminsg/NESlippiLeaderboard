@@ -88,7 +88,7 @@ export default function HomePage() {
       <div className="pb-1 text-gray-300"> Updated {updateDesc}</div>
       <Table players={players} />
       <div className="p-4 text-gray-300 flex flex-col">
-        <div>Built by Hufff (Benji) using blorppppp's CO Leaderboard</div>
+        <div>Built by Hufff (Benji) using blorppppp's CO Leaderboard, plus styles taken from Arya's WA Leaderboard and Moon's UK Leaderboard</div>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ interface Rank {
 class NoneRank implements Rank {
   public name = "None"
   public iconUrl = NoneIcon
-  public bgClass = "bg-stone-500"
+  public bgClass = LIGHT_STONE_BG
 
   isRank(player: Player) {
     return setCount(player) === 0;
@@ -48,7 +48,7 @@ const MIN_RANK_SETS = 5;
 class PendingRank implements Rank {
   public name = "Pending"
   public iconUrl = PendingIcon
-  public bgClass = "bg-stone-700"
+  public bgClass = DARK_STONE_BG
 
   isRank(player: Player) {
     const totalSets = setCount(player)
@@ -76,7 +76,7 @@ class StandardRank implements Rank {
 
 class GrandMaster extends StandardRank {
   constructor() {
-    super('Grandmaster', 2191.75, Infinity, "bg-slate-900", GrandMasterIcon)
+    super('Grandmaster', 2191.75, Infinity, SLATE_BG, GrandMasterIcon)
   }
 
   isRank(player: Player) {
@@ -89,12 +89,14 @@ class GrandMaster extends StandardRank {
   }
 }
 
-const ORANGE_BG = 'bg-orange-900';
-const SLATE_BG = 'bg-slate-800';
-const YELLOW_BG = 'bg-yellow-900';
-const SKY_BG = 'bg-sky-900';
-const BLUE_BG = 'bg-blue-900';
-const INDIGO_BG = 'bg-indigo-900';
+const ORANGE_BG = 'bg-gradient-to-r from-[#6e441a]';
+const SLATE_BG = 'bg-gradient-to-r from-gray-900';
+const YELLOW_BG = 'bg-gradient-to-r from-[#614c01]';
+const SKY_BG = 'bg-gradient-to-r from-teal-900';
+const BLUE_BG = 'bg-gradient-to-r from-[#232d94]';
+const INDIGO_BG = 'bg-gradient-to-r from-indigo-900';
+const LIGHT_STONE_BG = 'bg-gradient-to-r from-stone-500'
+const DARK_STONE_BG = 'bg-gradient-to-r from-stone-700'
 
 export const RANKS = [
   new NoneRank(),

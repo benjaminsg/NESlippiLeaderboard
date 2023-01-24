@@ -58,15 +58,15 @@ export function Row({ player }: Props) {
   const rankId = playerRank.name + codeToId(player.connectCode.code)
 
   return (
-    <tr className={`${playerRank.bgClass} border-separate border-spacing-2 border-b-2 border-gray-600`} >
-      <td className="md:text-2xl text-gray-300 md:px-6 md:py-4 md:p-1 whitespace-nowrap">
+    <tr className={`${playerRank.bgClass} no-border`} >
+      <td className="md:text-2xl text-gray-300 md:px-6 md:py-4 md:p-1 whitespace-nowrap bottom-border">
         <div><b>{isActive && `${player.rankedNetplayProfile.rank}`}</b></div>
         {Boolean(rankChange) && changeArrow(rankChange)} </td>
-      <td className="text-gray-100 md:px-6 md:py-4 p-1 whitespace-nowrap text-center overflow-hidden md:max-w-full max-w-[7rem] text-elipses">
+      <td className="text-gray-100 md:px-6 md:py-4 p-1 whitespace-nowrap text-center overflow-hidden md:max-w-full max-w-[7rem] text-elipses bottom-border">
         <b><a className="md:text-xl text-sm max-w-xs text-gray-300 hover:text-gray-500 hover:underline" href={codeToUrlSlug(player.connectCode.code)}>{player.leaderboardName}</a></b>
         <div className="text-gray-300 text-xs overflow-auto no-bar font-poyodash">{player.displayName} / {player.connectCode.code}</div>
       </td>
-      <td className="md:text-xl text-sm text-gray-900 md:px-6 md:py-4 p-1 whitespace-nowrap text-center">
+      <td className="md:text-xl text-sm text-gray-900 md:px-6 md:py-4 p-1 whitespace-nowrap bottom-border">
 
         {playerRank.iconUrl && <div className="flex items-center justify-center" id={rankId} data-tooltip-content={playerRank.name}>
           <img className="md:h-12 md:w-12 h-6 w-6 drop-shadow" src={playerRank.iconUrl}/>
@@ -77,10 +77,10 @@ export function Row({ player }: Props) {
           {isActive && Boolean(ratingChange) && changePlusMinus(ratingChange)}
         </div>
       </td>
-      <td className="md:text-sm text-xs text-gray-300 md:px-6 md:py-4 py-1  md:max-w-[18rem] max-w-[3rem]">
+      <td className="md:text-sm text-xs text-gray-300 md:px-6 md:py-4 py-1  md:max-w-[18rem] max-w-[3rem] bottom-border">
         <Characters player={player} totalGames={totalGames} />
       </td>
-      <td className="md:text-xl text-gray-300 text-sm md:px-6 md:py-4 md:p-1 whitespace-nowrap overflow-auto no-bar">
+      <td className="md:text-xl text-gray-300 text-sm md:px-6 md:py-4 md:p-1 whitespace-nowrap overflow-auto no-bar bottom-border">
         <b>{Boolean(totalGames) && <><span className="text-green-500">{player.rankedNetplayProfile.wins ?? 0}</span><span className="md:p-1">/</span>
         <span className="text-red-500">{player.rankedNetplayProfile.losses ?? 0}</span>
         </>}</b>

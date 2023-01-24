@@ -107,3 +107,11 @@ th {
     font-weight: 500;
     text-align: center;
 }
+
+.no-border {
+    border: none;
+}
+
+.bottom-border {
+    border-bottom: 1px solid grey;
+}
