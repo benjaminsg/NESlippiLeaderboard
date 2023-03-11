@@ -35,6 +35,14 @@
     height: auto;
 }
 
+.logo-sm {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.3em 0 -5%;
+    max-width: 20%;
+    height: auto;
+}
+
  .navigation {
      background-color: #313c4e;
      position: absolute;
@@ -45,6 +53,7 @@
      max-height: calc(100vh - 32px);
      overflow: auto;
      color: #ffffff;
+     z-index: 10;
  }
 
 .navigation .flag {
@@ -115,4 +124,12 @@ th {
 
 .bottom-border {
     border-bottom: 1px solid grey;
+}
+
+.fill-parent {
+    width: 100%;
+}
+
+.text-left {
+    text-align: left;
 }

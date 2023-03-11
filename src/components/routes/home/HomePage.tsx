@@ -74,22 +74,47 @@ export default function HomePage() {
     };
   }, []);
 
-  return (
-    <div className="flex flex-col items-center h-screen p-8">
-        <div className="navigation">
-            <p>Other leaderboards</p>
-            <ul>
-                <OtherLeaderboards leaderboards={otherLeaderboards} />
-            </ul>
-        </div>
-        <h1 className="text-4xl text-center text-white pt-3">
-            <img src={NEMLogo} className="logo"/><b>{settings.title}</b>
-        </h1>
-      <div className="pb-1 text-gray-300"> Updated {updateDesc}</div>
-      <Table players={players} />
-      <div className="p-4 text-gray-300 flex flex-col">
-        <div>Built by Hufff (Benji) using blorppppp's CO Leaderboard, plus styles taken from Arya's WA Leaderboard and Moon's UK Leaderboard</div>
-      </div>
-    </div>
-  );
+  if (window.innerWidth > 600) {
+      return (
+          <div className="flex flex-col items-center h-screen p-8">
+              <div className="navigation">
+                  <p>Other leaderboards</p>
+                  <ul>
+                      <OtherLeaderboards leaderboards={otherLeaderboards}/>
+                  </ul>
+              </div>
+              <h1 className="text-4xl text-center text-white pt-3">
+                  <img src={NEMLogo} className="logo"/><b>{settings.title}</b>
+              </h1>
+              <div className="pb-1 text-gray-300"> Updated {updateDesc}</div>
+              <Table players={players}/>
+              <div className="p-4 text-gray-300 flex flex-col">
+                  <div>Built by Hufff (Benji) using blorppppp's CO Leaderboard, plus styles taken from Arya's WA
+                      Leaderboard and Moon's UK Leaderboard
+                  </div>
+              </div>
+          </div>
+      );
+  } else {
+      return (
+          <div className="flex flex-col items-center h-screen p-10">
+              <div className="navigation">
+                  <p>Other leaderboards</p>
+                  <ul>
+                      <OtherLeaderboards leaderboards={otherLeaderboards}/>
+                  </ul>
+              </div>
+              <h1 className="text-3xl text-center text-white pt-3">
+                  <img src={NEMLogo} className="logo-sm"/><b>{settings.title}</b>
+              </h1>
+              <div className="pb-1 text-gray-300"> Updated {updateDesc}</div>
+              <Table players={players}/>
+              <div className="p-4 text-gray-300 flex flex-col text-xs">
+                  <div>Built by Hufff (Benji) using blorppppp's CO Leaderboard, plus styles taken from Arya's WA
+                      Leaderboard and Moon's UK Leaderboard
+                  </div>
+              </div>
+          </div>
+      );
+  }
 }
