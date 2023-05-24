@@ -34,8 +34,8 @@ const otherLeaderboards = [
     { code: "Us_sd", name: "Siouxland", url: "https://melangestillraces.github.io/SiouxlandSlippiLeaderboard/#/" },
     { code: "South_america", name: "South America", url: "https://caioicy.github.io/slippi-leaderboard-sa/#/" },
     { code: "Us_tx", name: "Texas", url: "https://timothysdavis00.github.io/TXSlippiLeaderboard/#/" },
-    { code: "Us_wa", name: "Washington", url: "https://slippi.poyo.dev/" },
     { code: "Uk", name: "United Kingdom", url: "https://spirrit.github.io/UKSlippiLeaderboard/#/" },
+    { code: "Us_wa", name: "Washington", url: "https://slippi.poyo.dev/" },
 ];
 
 const sortAndPopulatePlayers = (players: Player[]) => {
