@@ -40,6 +40,11 @@ const getPlayers = async () => {
   // var displayNames = unsortedPlayers.map(function(player) {
   //   return player.displayName;
   // });
+  if(unsortedPlayers.length != tags.length) {
+    console.log("Error retrieving player data. Received data of length " + unsortedPlayers.length.toString() + " but " +
+        "tag list is of length " + tags.length.toString())
+    return []
+  }
   const unsortedPlayersWithTags = unsortedPlayers.map((obj, i) => ({ ...obj, leaderboardName: tags[i]}))
   return unsortedPlayersWithTags.sort((p1, p2) =>
     p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
