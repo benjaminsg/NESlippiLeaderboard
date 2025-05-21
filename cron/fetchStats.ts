@@ -34,8 +34,8 @@ const getPlayers = async () => {
   const results = await Promise.all(allData.map(p => p.catch(e => e)));
   const validResults = results.filter(result => !(result instanceof Error));
   const unsortedPlayers = validResults
-    .filter((data: any) => data?.data?.getConnectCode?.user)
-    .map((data: any) => data.data.getConnectCode.user);
+    .filter((data: any) => data?.data?.getUser)
+    .map((data: any) => data.data.getUser);
   // uncomment to print all display names
   // var displayNames = unsortedPlayers.map(function(player) {
   //   return player.displayName;

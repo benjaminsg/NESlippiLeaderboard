@@ -39,19 +39,21 @@ exports.__esModule = true;
 exports.getPlayerDataThrottled = exports.getPlayerData = void 0;
 var limiter_1 = require("limiter");
 var getPlayerData = function (connectCode) { return __awaiter(void 0, void 0, void 0, function () {
-    var query, req;
+    var formattedCode, query, req;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                query = "fragment profileFieldsV2 on NetplayProfileV2 {\n    id\n    ratingOrdinal\n    ratingUpdateCount\n    wins\n    losses\n    dailyGlobalPlacement\n    dailyRegionalPlacement\n    continent\n    characters {\n      character\n      gameCount\n      __typename\n    }\n    __typename\n  }\n\n  fragment userProfilePage on User {\n    fbUid\n    displayName\n    connectCode {\n      code\n      __typename\n    }\n    rankedNetplayProfile {\n      ...profileFieldsV2\n      __typename\n    }\n    __typename\n  }\n    \n  query AccountManagementPageQuery($cc: String!) {\n    getConnectCode(code: $cc) {\n      user {\n        ...userProfilePage\n        __typename\n      }\n      __typename\n    }\n  }";
-                return [4 /*yield*/, fetch('https://gql-gateway-2-dot-slippi.uc.r.appspot.com/graphql', {
+                formattedCode = connectCode.includes('#') ? connectCode : connectCode.replace('-', '#');
+                query = "fragment profileFields on NetplayProfile {\n    id\n    ratingOrdinal\n    ratingUpdateCount\n    wins\n    losses\n    dailyGlobalPlacement\n    dailyRegionalPlacement\n    continent\n    characters {\n      character\n      gameCount\n      __typename\n    }\n    __typename\n  }\n\n  fragment userProfilePage on User {\n    fbUid\n    displayName\n    connectCode {\n      code\n      __typename\n    }\n    rankedNetplayProfile {\n      ...profileFields\n      __typename\n    }\n    __typename\n  }\n    \n  query UserProfilePageQuery($cc: String!) {\n    getUser(connectCode: $cc) {\n      ...userProfilePage\n      __typename\n    }\n  }";
+                return [4 /*yield*/, fetch('https://internal.slippi.gg/graphql', {
                         headers: {
-                            'content-type': 'application/json'
+                            'content-type': 'application/json',
+                            'origin': 'https://slippi.gg'
                         },
                         body: JSON.stringify({
-                            operationName: 'AccountManagementPageQuery',
+                            operationName: 'UserProfilePageQuery',
                             query: query,
-                            variables: { cc: connectCode }
+                            variables: { cc: formattedCode }
                         }),
                         method: 'POST'
                     })];

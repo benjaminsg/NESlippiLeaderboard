@@ -1,7 +1,9 @@
 import { RateLimiter } from "limiter"
 
 export const getPlayerData = async (connectCode: string) => {
-  const query = `fragment profileFieldsV2 on NetplayProfileV2 {
+    const formattedCode = connectCode.includes('#') ? connectCode : connectCode.replace('-', '#');
+	
+    const query = `fragment profileFields on NetplayProfile {
     id
     ratingOrdinal
     ratingUpdateCount
@@ -26,30 +28,28 @@ export const getPlayerData = async (connectCode: string) => {
       __typename
     }
     rankedNetplayProfile {
-      ...profileFieldsV2
+      ...profileFields
       __typename
     }
     __typename
   }
     
-  query AccountManagementPageQuery($cc: String!) {
-    getConnectCode(code: $cc) {
-      user {
-        ...userProfilePage
-        __typename
-      }
+  query UserProfilePageQuery($cc: String!) {
+    getUser(connectCode: $cc) {
+      ...userProfilePage
       __typename
     }
   }`;
 
-  const req = await fetch('https://gql-gateway-2-dot-slippi.uc.r.appspot.com/graphql', {
+  const req = await fetch('https://internal.slippi.gg/graphql', {
     headers: {
       'content-type': 'application/json',
+      'origin': 'https://slippi.gg',
     },
     body: JSON.stringify({
-      operationName: 'AccountManagementPageQuery',
+      operationName: 'UserProfilePageQuery',
       query,
-      variables: { cc: connectCode },
+      variables: { cc: formattedCode },
     }),
     method: 'POST',
   });
